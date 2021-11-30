@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<archetype-descriptor
+        xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="gradle" partial="true">
+    <requiredProperties>
+        <requiredProperty key="gradle-version">
+            <defaultValue>7.3</defaultValue>
+            <validationRegex>[6-8].[0-9]</validationRegex>
+        </requiredProperty>
+    </requiredProperties>
+    <fileSets>
+        <fileSet filtered="true">
+            <directory>gradle/wrapper</directory>
+            <includes>
+                <include>
+                    gradle-wrapper.properties
+                </include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="false">
+            <directory>gradle/wrapper</directory>
+            <includes>
+                <include>
+                    gradle-wrapper.jar
+                </include>
+            </includes>
+        </fileSet>
+
+        <fileSet filtered="true" packaged="false">
+            <directory/>
+            <includes>
+                <include>**/*.kts</include>
+            </includes>
+        </fileSet>
+
+        <fileSet filtered="false" packaged="false">
+            <directory/>
+            <includes>
+                <include>gradlew</include>
+                <include>gradlew.bat</include>
+            </includes>
+        </fileSet>
+
+        <fileSet packaged="false">
+            <directory>src/main/java</directory>
+        </fileSet>
+        <fileSet packaged="false">
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet packaged="false">
+            <directory>src/test/java</directory>
+        </fileSet>
+        <fileSet packaged="false">
+            <directory>src/test/resources</directory>
+        </fileSet>
+
+    </fileSets>
+</archetype-descriptor>
